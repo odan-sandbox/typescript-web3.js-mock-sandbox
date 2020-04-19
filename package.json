@@ -1,0 +1,36 @@
+{
+  "name": "solidity-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "odan <odan3240@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bignumber.js": "^5.0.0",
+    "@types/node": "^13.7.2",
+    "@typescript-eslint/eslint-plugin": "^2.20.0",
+    "@typescript-eslint/parser": "^2.20.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.1",
+    "truffle": "^5.1.15",
+    "truffle-security": "^1.7.1",
+    "truffle-typings": "^1.0.8",
+    "ts-node": "^8.6.2",
+    "typechain": "^1.0.5",
+    "typechain-target-truffle": "^1.0.2",
+    "typescript": "^3.7.5"
+  },
+  "dependencies": {},
+  "scripts": {
+    "clean": "rm -rf build types/contracts/",
+    "build:truffle": "truffle build",
+    "build:typechain": "typechain --target truffle --outDir types/contracts 'build/contracts/*'",
+    "build": "run-s build:truffle build:typechain",
+    "test:type": "tsc --noEmit",
+    "test:truffle": "truffle test",
+    "test": "run-s test:type test:truffle"
+  }
+}
