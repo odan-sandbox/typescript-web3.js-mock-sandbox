@@ -33,7 +33,9 @@
   "scripts": {
     "clean": "rm -rf build types/contracts/",
     "build:truffle": "truffle build",
-    "build:typechain": "typechain --target web3-v1 --outDir types/contracts 'build/contracts/*'",
+    "build:typechain": "run-p build:typechain:*",
+    "build:typechain:truffle": "typechain --target truffle --outDir types/contracts/truffle 'build/contracts/*'",
+    "build:typechain:web3": "typechain --target web3-v1 --outDir types/contracts/web3 'build/contracts/*'",
     "build": "run-s build:truffle build:typechain",
     "test:type": "tsc --noEmit",
     "test:truffle": "truffle test",

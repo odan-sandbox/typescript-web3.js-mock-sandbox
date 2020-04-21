@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import { EventData } from "web3-eth-contract";
 
-import { Sample } from "../types/contracts/Sample";
+import { Sample } from "../types/contracts/web3/Sample";
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const abi = require("../build/contracts/Sample.json");
