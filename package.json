@@ -5,6 +5,7 @@
   "author": "odan <odan3240@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@openzeppelin/contracts": "^3.0.0",
     "@types/bignumber.js": "^5.0.0",
     "@types/node": "^13.7.2",
     "@typescript-eslint/eslint-plugin": "^2.20.0",
@@ -21,13 +22,18 @@
     "ts-node": "^8.6.2",
     "typechain": "^1.0.5",
     "typechain-target-truffle": "^1.0.2",
+    "typechain-target-web3-v1": "^1.0.4",
     "typescript": "^3.7.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "web3": "1.2.6",
+    "web3-core": "^1.2.6",
+    "web3-eth-contract": "^1.2.6"
+  },
   "scripts": {
     "clean": "rm -rf build types/contracts/",
     "build:truffle": "truffle build",
-    "build:typechain": "typechain --target truffle --outDir types/contracts 'build/contracts/*'",
+    "build:typechain": "typechain --target web3-v1 --outDir types/contracts 'build/contracts/*'",
     "build": "run-s build:truffle build:typechain",
     "test:type": "tsc --noEmit",
     "test:truffle": "truffle test",
